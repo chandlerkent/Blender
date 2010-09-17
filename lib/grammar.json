@@ -1,16 +1,20 @@
 {   
     "lex": {
         "macros": {
-            "Word": "\\w+",
-            "Ident": "(({Word}?)-{Word}|{Word})",
+            "Word":         "\\w+",
+            "Ident":        "(({Word}?)-{Word}|{Word})",
+            "HexNumber":    "([0-9a-fA-F]{6}|[0-9a-fA-F]{3})",
+            "Number":       "([0-9]+|[0-9]*\\.[0-9]+)",
+            "RGB":          "(RGB|rgb)",
         },
         
         "rules": [
-            ["/\\*(.|\\n|\\r|\\r\\n)*?\\*/",    "/* skip */"],
-            ["//.*",                            "/* skip */"],
-            ["\\s+",                            "/* skip */"],
-            ["{Ident}",                         "return 'IDENT';"],
-            ["(\\{|\\}|\\:|\\;|\\.|\\#)",       "return yytext;"],
+            ["/\\*(.|\\n|\\r|\\r\\n)*?\\*/",                    "/* skip */"],
+            ["//.*",                                            "/* skip */"],
+            ["\\s+",                                            "/* skip */"],
+            ["\\#{HexNumber}",                                  "return 'HEXCOLOR';"],
+            ["{Ident}",                                         "return 'IDENT';"],
+            ["(\\{|\\}|\\:|\\;|\\.|\\#)",                       "return yytext;"],
         ]
     },
 
@@ -40,8 +44,12 @@
                                 ["IDENT", "$$ = $1;"]
                             ],
         "Value":            [
-                                ["# IDENT", "$$ = $2;"],
-                                ["IDENT", "$$ = $1;"],
+                                ["Color", "$$ = $1;"],
+                                ["IDENT", "if (yy.NamedColorNode.isNamedColor($1)) { $$ = new yy.NamedColorNode($1); } else if (yy.HexColorNode.namedColorToHexValue($1)) { $$ = new yy.HexColorNode(yy.HexColorNode.namedColorToHexValue($1)); } else { $$ = $1; }"],
+                            ],
+        "Color":            [
+                                ["HEXCOLOR", "$$ = new yy.HexColorNode($1);"],
+                                ["RGBCOLOR", "$$ = new yy.RGBColorNode($1);"],
                             ],
     }
 }
