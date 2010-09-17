@@ -1,0 +1,13 @@
+.button {
+    font: blue;
+    text-color: #ffffff;
+}
+
+.button:bezeled {
+    text-color: #000000;
+}
+
+.textField
+{
+   attribute: value;
+}
