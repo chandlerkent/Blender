@@ -4,7 +4,6 @@
             "Ident":        "((?:-{0,1}[a-zA-Z]+)+)",
             "HexNumber":    "([0-9a-fA-F]{6}|[0-9a-fA-F]{3})",
             "Number":       "([0-9]*\\.[0-9]+|[0-9]+)",
-            "RGB":          "(RGB|rgb)",
         },
         
         "rules": [
@@ -13,8 +12,10 @@
             ["\\#{HexNumber}",                                  "return 'HEXCOLOR';"],
             ["{Number}",                                        "return 'NUMBER';"],
             ["bold",                                            "return 'BOLD';"],
+            ["(rgba|RGBA)",                                     "return 'RGBA';"],
+            ["(rgb|RGB)",                                       "return 'RGB';"],
             ["{Ident}",                                         "return 'IDENT';"],
-            ["(\\{|\\}|\\:|\\;|\\.|\\#)",                       "return yytext;"],
+            ["(\\{|\\}|\\:|\\;|\\.|\\(|\\)|\\,)",                       "return yytext;"],
         ]
     },
 
@@ -64,6 +65,8 @@
                             ],
         "Color":            [
                                 ["HEXCOLOR", "$$ = new yy.HexColorNode($1);"],
+                                ["RGB ( NUMBER , NUMBER , NUMBER )", "$$ = new yy.RGBColorNode($3, $5, $7, 1.0);"],
+                                ["RGBA ( NUMBER , NUMBER , NUMBER , NUMBER )", "$$ = new yy.RGBColorNode($3, $5, $7, $9);"],
                             ],
         "SizeOrRect":       [
                                 ["NUMBER NUMBER NUMBER NUMBER", "$$ = new yy.RectNode($1, $2, $3, $4);"],
