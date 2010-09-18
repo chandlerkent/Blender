@@ -15,7 +15,7 @@
             ["(rgba|RGBA)",                                     "return 'RGBA';"],
             ["(rgb|RGB)",                                       "return 'RGB';"],
             ["{Ident}",                                         "return 'IDENT';"],
-            ["(\\{|\\}|\\:|\\;|\\.|\\(|\\)|\\,)",                       "return yytext;"],
+            ["(\\{|\\}|\\:|\\;|\\.|\\(|\\)|\\,|\\'|\\\")",      "return yytext;"],
         ]
     },
 
@@ -51,16 +51,16 @@
                                 ["IDENT", "if (yy.NamedColorNode.isNamedColor($1)) { $$ = new yy.NamedColorNode($1); } else if (yy.HexColorNode.namedColorToHexValue($1)) { $$ = new yy.HexColorNode(yy.HexColorNode.namedColorToHexValue($1)); } else { $$ = $1; }"],
                             ],
         "Font":             [
-                                ["BOLD IDENT NUMBER", "$$ = new yy.FontNode($1, $2, $3);"],
-                                ["BOLD NUMBER IDENT", "$$ = new yy.FontNode($1, $2, $3);"],
-                                ["IDENT BOLD NUMBER", "$$ = new yy.FontNode($1, $2, $3);"],
-                                ["IDENT NUMBER BOLD", "$$ = new yy.FontNode($1, $2, $3);"],
-                                ["NUMBER BOLD IDENT", "$$ = new yy.FontNode($1, $2, $3);"],
-                                ["NUMBER IDENT BOLD", "$$ = new yy.FontNode($1, $2, $3);"],
+                                ["BOLD IdentOrString NUMBER", "$$ = new yy.FontNode($1, $2, $3);"],
+                                ["BOLD NUMBER IdentOrString", "$$ = new yy.FontNode($1, $2, $3);"],
+                                ["IdentOrString BOLD NUMBER", "$$ = new yy.FontNode($1, $2, $3);"],
+                                ["IdentOrString NUMBER BOLD", "$$ = new yy.FontNode($1, $2, $3);"],
+                                ["NUMBER BOLD IdentOrString", "$$ = new yy.FontNode($1, $2, $3);"],
+                                ["NUMBER IdentOrString BOLD", "$$ = new yy.FontNode($1, $2, $3);"],
                                 ["BOLD NUMBER", "$$ = new yy.FontNode($1, $2);"],
                                 ["NUMBER BOLD", "$$ = new yy.FontNode($1, $2);"],
-                                ["IDENT NUMBER", "$$ = new yy.FontNode($1, $2);"],
-                                ["NUMBER IDENT", "$$ = new yy.FontNode($1, $2);"],
+                                ["IdentOrString NUMBER", "$$ = new yy.FontNode($1, $2);"],
+                                ["NUMBER IdentOrString", "$$ = new yy.FontNode($1, $2);"],
                                 ["NUMBER", "$$ = new yy.FontNode($1);"],
                             ],
         "Color":            [
@@ -71,6 +71,14 @@
         "SizeOrRect":       [
                                 ["NUMBER NUMBER NUMBER NUMBER", "$$ = new yy.RectNode($1, $2, $3, $4);"],
                                 ["NUMBER NUMBER", "$$ = new yy.SizeNode($1, $2);"],
+                            ],
+        "IdentOrString":    [
+                                ["' IdentList '", "$$ = $2;"],
+                                ["\" IdentList \"", "$$ = $2;"],
+                            ],
+        "IdentList":        [
+                                ["", "$$ = [];"],
+                                ["IDENT IdentList", "$2.unshift($1); $$ = $2;"],
                             ],
     }
 }
