@@ -1,4 +1,9 @@
-.button {
+@variables {
+    TextShadowColor: rgb(240.0, 240.0, 240.0);
+    DisabledTextShadowColor: rgba(240.0, 240.0, 240.0, 0.6);
+}
+
+button {
     line-break-mode: CPLineBreakByTruncatingTail;
     image-offset: CPButtonImageOffset;
     text-color: rgb(79.0, 79.0, 79.0);
@@ -6,38 +11,86 @@
     max-size: -1.0 24.0;
 }
 
-.button:default {
-    text-color: rgb(13.0, 51.0, 70.0);
-    bezel-color: url("default-button-bezel-disabled-left.png") 4.0 24.0 url("default-button-bezel-disabled-center.png") 1.0 24.0 url("default-button-bezel-disabled-right.png") 4.0 24.0 repeat-x;
-}
-
-.button:bordered {
+button.bordered {
     font: 12.0;
-    text-shadow-color: rgb(240.0, 240.0, 240.0);
+    text-shadow-color: var(TextShadowColor);
     text-shadow-offset: 0.0 1.0;
     content-inset: 0.0 5.0 0.0 5.0;
-    bezel-color: url("button-bezel-left.png") 4.0 24.0 url("button-bezel-center.png") 1.0 24.0 url("button-bezel-right.png") 4.0 24.0 repeat-x;
+    bezel-color:    url("button-bezel-left.png") 4.0 24.0
+                    url("button-bezel-center.png") 1.0 24.0
+                    url("button-bezel-right.png") 4.0 24.0
+                    repeat-x;
 }
 
-.button:highlighted {
+button.default {
+    text-color: rgb(13.0, 51.0, 70.0);
+}
+
+button.highlighted {
     bezel-color: url("button-bezel-highlighted-left.png") 4.0 24.0 url("button-bezel-highlighted-center.png") 1.0 24.0 url("button-bezel-highlighted-right.png") 4.0 24.0 repeat-x;
 }
 
-.button:disabled {
-    text-color: rgba(13.0, 51.0, 70.0, 0.6);
-    bezel-color: url("button-bezel-disabled-left.png") 4.0 24.0 url("button-bezel-disabled-center.png") 1.0 24.0 url("button-bezel-disabled-right.png") 4.0 24.0 repeat-x;
-    text-shadow-color: rgb(240.0, 240.0, 240.0);
+button.disabled {
+    text-color: rgb(0.6, 0.6, 0.6);
 }
 
-.popUpButton {
+button.bordered.disabled {
+    text-color: rgb(240.0, 240.0, 240.0);
+    text-shadow-color: var(TextShadowColor);
+    bezel-color:    url("button-bezel-disabled-left.png") 4.0 24.0
+                    url("button-bezel-disabled-center.png") 1.0 24.0
+                    url("button-bezel-disabled-right.png") 4.0 24.0
+                    repeat-x;
+}
+
+button.bordered.highlighted {
+    bezel-color:    url("button-bezel-highlighted-left.png") 4.0 24.0
+                    url("button-bezel-highlighted-center.png") 1.0 24.0
+                    url("button-bezel-highlighted-right.png") 4.0 24.0
+                    repeat-x;
+}
+
+button.bordered.disabled {
+    bezel-color:    url("default-button-bezel-disabled-left.png") 4.0 24.0
+                    url("default-button-bezel-disabled-center.png") 1.0 24.0
+                    url("default-button-bezel-disabled-right.png") 4.0 24.0
+                    repeat-x;
+}
+
+button.default.disabled {
+    text-color: rgba(13.0, 51.0, 70.0, 0.6);
+}
+
+button.default.bordered {
+    bezel-color:    url("default-button-bezel-left.png") 4.0 24.0
+                    url("default-button-bezel-center.png") 1.0 24.0
+                    url("default-button-bezel-right.png") 4.0 24.0
+                    repeat-x;
+}
+
+button.bordered.default.disabled {
+    bezel-color:    url("default-button-bezel-disabled-left.png") 4.0 24.0
+                    url("default-button-bezel-disabled-center.png") 1.0 24.0
+                    url("default-button-bezel-disabled-right.png") 4.0 24.0
+                    repeat-x;
+}
+
+button.bordered.highlighted.default {
+    bezel-color:    url("default-button-bezel-highlighted-left.png") 4.0 24.0
+                    url("default-button-bezel-highlighted-center.png") 1.0 24.0
+                    url("default-button-bezel-highlighted-right.png") 4.0 24.0
+                    repeat-x;
+}
+
+popUpButton {
     font: 12.0;
     text-color: rgb(0.6, 0.6, 0.6);
-    text-shadow-color: rgb(240.0, 240.0, 240.0);
+    text-shadow-color: var(TextShadowColor);
     min-size: 32.0 24.0;
     max-size: -1.0 24.0;
 }
 
-.popUpButton:bordered {
+popUpButton.bordered {
     bezel-color:    url("button-bezel-left.png") 4.0 24.0
                     url("button-bezel-center.png") 1.0 24.0
                     url("popup-bezel-right.png") 27.0 24.0
@@ -45,11 +98,43 @@
     content-inset: 0.0 32.0 0.0 5.0;
 }
 
-.popUpButton:disabled {
+popUpButton.bordered.disabled {
     bezel-color:    url("button-bezel-disabled-left.png") 4.0 24.0
                     url("button-bezel-disabled-center.png") 1.0 24.0
                     url("popup-bezel-disabled-right.png") 27.0 24.0
                     repeat-x;
     text-color: rgb(0.6, 0.6, 0.6);
-    text-shadow-color: rgba(240.0, 240.0, 240.0, 0.6);    
+    text-shadow-color: var(DisabledTextShadowColor);    
+}
+
+pullDownMenu {
+    font: 12.0;
+    text-color: rgb(0.6, 0.6, 0.6);
+    text-shadow-color: var(TextShadowColor);
+    min-size: 32.0 24.0;
+    max-size: -1.0 24.0;
+}
+
+pullDownMenu.bordered {
+    content-inset: 0 32.0 0 5.0;
+}
+
+pullDownMenu.bordered.disabled {
+    text-color: rgb(0.6, 0.6, 0.6);
+    text-shadow-color: var(DisabledTextShadowColor);
+}
+
+pullDownMenu.CPPopUpButtonStatePullsDown.bordered {
+    bezel-color:    url("button-bezel-left.png") 4.0 24.0
+                    url("button-bezel-center.png") 1.0 24.0
+                    url("popup-bezel-right-pullsdown.png") 27.0 24.0
+                    repeat-x;
+    
+}
+
+pullDownMenu.CPPopUpButtonStatePullsDown.bordered.disabled {
+    bezel-color:    url("button-bezel-disabled-left.png") 4.0 24.0
+                    url("button-bezel-disabled-center.png") 1.0 24.0
+                    url("popup-bezel-disabled-right-pullsdown.png") 27.0 24.0
+                    repeat-x;
 }
