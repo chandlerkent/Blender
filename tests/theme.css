@@ -1,18 +1,55 @@
 .button {
     line-break-mode: CPLineBreakByTruncatingTail;
     image-offset: CPButtonImageOffset;
+    text-color: rgb(79.0, 79.0, 79.0);
+    min-size: 0.0 24.0;
+    max-size: -1.0 24.0;
+}
+
+.button:default {
+    text-color: rgb(13.0, 51.0, 70.0);
+    bezel-color: url("default-button-bezel-disabled-left.png") 4.0 24.0 url("default-button-bezel-disabled-center.png") 1.0 24.0 url("default-button-bezel-disabled-right.png") 4.0 24.0 repeat-x;
 }
 
 .button:bordered {
-    font: 12.0 bold "Arial Helvetica sans-serif";
-    text-color: rgb(1.0, 1.0, 1.0);
-    text-shadow-color: red;
+    font: 12.0;
+    text-shadow-color: rgb(240.0, 240.0, 240.0);
     text-shadow-offset: 0.0 1.0;
     content-inset: 0.0 5.0 0.0 5.0;
-    bezel-color: url('button-bezel-left.png') 4.0 24.0;
+    bezel-color: url("button-bezel-left.png") 4.0 24.0 url("button-bezel-center.png") 1.0 24.0 url("button-bezel-right.png") 4.0 24.0 repeat-x;
+}
+
+.button:highlighted {
+    bezel-color: url("button-bezel-highlighted-left.png") 4.0 24.0 url("button-bezel-highlighted-center.png") 1.0 24.0 url("button-bezel-highlighted-right.png") 4.0 24.0 repeat-x;
 }
 
 .button:disabled {
-    text-color: gray;
-    bezel-color: gray;
+    text-color: rgba(13.0, 51.0, 70.0, 0.6);
+    bezel-color: url("button-bezel-disabled-left.png") 4.0 24.0 url("button-bezel-disabled-center.png") 1.0 24.0 url("button-bezel-disabled-right.png") 4.0 24.0 repeat-x;
+    text-shadow-color: rgb(240.0, 240.0, 240.0);
+}
+
+.popUpButton {
+    font: 12.0;
+    text-color: rgb(0.6, 0.6, 0.6);
+    text-shadow-color: rgb(240.0, 240.0, 240.0);
+    min-size: 32.0 24.0;
+    max-size: -1.0 24.0;
+}
+
+.popUpButton:bordered {
+    bezel-color:    url("button-bezel-left.png") 4.0 24.0
+                    url("button-bezel-center.png") 1.0 24.0
+                    url("popup-bezel-right.png") 27.0 24.0
+                    repeat-x;
+    content-inset: 0.0 32.0 0.0 5.0;
+}
+
+.popUpButton:disabled {
+    bezel-color:    url("button-bezel-disabled-left.png") 4.0 24.0
+                    url("button-bezel-disabled-center.png") 1.0 24.0
+                    url("popup-bezel-disabled-right.png") 27.0 24.0
+                    repeat-x;
+    text-color: rgb(0.6, 0.6, 0.6);
+    text-shadow-color: rgba(240.0, 240.0, 240.0, 0.6);    
 }
