@@ -10,10 +10,13 @@
             ["/\\*(.|\\n|\\r|\\r\\n)*?\\*/",                    "/* skip */"],
             ["\\s+",                                            "/* skip */"],
             ["\\#{HexNumber}",                                  "return 'HEXCOLOR';"],
+            ["(repeat-x|repeat-y|no-repeat)",                   "return 'REPEAT';"],
             ["{Number}",                                        "return 'NUMBER';"],
             ["bold",                                            "return 'BOLD';"],
+            ["(url|URL)",                                       "return 'URL';"],
             ["(rgba|RGBA)",                                     "return 'RGBA';"],
             ["(rgb|RGB)",                                       "return 'RGB';"],
+            ["({Ident})\\.(gif|jpg|png)",                       "return 'URI';"],
             ["{Ident}",                                         "return 'IDENT';"],
             ["(\\{|\\}|\\:|\\;|\\.|\\(|\\)|\\,|\\'|\\\")",      "return yytext;"],
         ]
@@ -48,6 +51,7 @@
                                 ["Font", "$$ = $1;"],
                                 ["Color", "$$ = $1;"],
                                 ["SizeOrRect", "$$ = $1;"],
+                                ["UrlList", "$$ = $1;"],
                                 ["IDENT", "if (yy.NamedColorNode.isNamedColor($1)) { $$ = new yy.NamedColorNode($1); } else if (yy.HexColorNode.namedColorToHexValue($1)) { $$ = new yy.HexColorNode(yy.HexColorNode.namedColorToHexValue($1)); } else { $$ = $1; }"],
                             ],
         "Font":             [
@@ -79,6 +83,15 @@
         "IdentList":        [
                                 ["", "$$ = [];"],
                                 ["IDENT IdentList", "$2.unshift($1); $$ = $2;"],
+                            ],
+        "UrlList":          [                    
+                                ["", "$$ = new yy.PatternColorNode();"],
+                                ["REPEAT", "$$ = new yy.PatternColorNode($1);"],
+                                ["Url UrlList", "$2.addImage($1); $$ = $2;"],
+                            ],
+        "Url":              [
+                                ["URL ( ' URI ' ) NUMBER NUMBER", "$$ = new yy.ImageNode($4, $7, $8);"],
+                                ["URL ( \" URI \" ) NUMBER NUMBER", "$$ = new yy.ImageNode($4, $7, $8);"],
                             ],
     }
 }

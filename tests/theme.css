@@ -9,7 +9,7 @@
     text-shadow-color: red;
     text-shadow-offset: 0.0 1.0;
     content-inset: 0.0 5.0 0.0 5.0;
-    bezel-color: blue;
+    bezel-color: url('button-bezel-left.png') 4.0 24.0;
 }
 
 .button:disabled {
