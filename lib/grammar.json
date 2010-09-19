@@ -1,7 +1,7 @@
 {   
     "lex": {
         "macros": {
-            "Ident":        "((?:-{0,1}[a-zA-Z]+)+)",
+            "Ident":        "((?:-{0,1}[a-zA-Z0-9]+)+)",
             "HexNumber":    "([0-9a-fA-F]{6}|[0-9a-fA-F]{3})",
             "Number":       "(-?[0-9]*\\.[0-9]+|[0-9]+)",
         },
@@ -18,6 +18,7 @@
             ["(rgb|RGB)",                                       "return 'RGB';"],
             ["({Ident})\\.(gif|jpg|png)",                       "return 'URI';"],
             ["@variables",                                      "return '@VARIABLES';"],
+            ["@ThemeName",                                      "return 'THEME_NAME';"],
             ["(var|VAR)",                                       "return 'VAR';"],
             ["{Ident}",                                         "return 'IDENT';"],
             ["(\\{|\\}|\\:|\\;|\\.|\\(|\\)|\\,|\\'|\\\"|\\@)",      "return yytext;"],
@@ -26,8 +27,12 @@
 
     "bnf": { 
         "Stylesheet":       [
-                                ["@VARIABLES { VariableList } StmtList", "$$ = new yy.Stylesheet($5); return $$;"],
-                                ["StmtList", "$$ = new yy.Stylesheet($1, []); return $$;"],
+                                ["@VARIABLES { VariableList } ThemeName StmtList", "$$ = new yy.Stylesheet($5, $6); return $$;"],
+                                ["ThemeName StmtList", "$$ = new yy.Stylesheet($1, $2); return $$;"],
+                            ],
+        "ThemeName":        [
+                                ["", "$$ = null;"],
+                                ["THEME_NAME IDENT ;", "$$ = $2;"],
                             ],
         "StmtList":         [
                                 ["", "$$ = [];"],

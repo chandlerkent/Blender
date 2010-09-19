@@ -3,6 +3,8 @@
     DisabledTextShadowColor: rgba(240.0, 240.0, 240.0, 0.6);
 }
 
+@ThemeName Aristo;
+
 button {
     line-break-mode: CPLineBreakByTruncatingTail;
     image-offset: CPButtonImageOffset;
@@ -137,4 +139,377 @@ pullDownMenu.CPPopUpButtonStatePullsDown.bordered.disabled {
                     url("button-bezel-disabled-center.png") 1.0 24.0
                     url("popup-bezel-disabled-right-pullsdown.png") 27.0 24.0
                     repeat-x;
+}
+
+scrollView {
+    border-color: rgba(0.0, 0.0, 0.0, 0.2);
+    bottom-corner-color: url("scrollview-bottom-corner-color.png") 15.0 15.0;
+}
+
+scroller {
+    minimum-knob-length: 21.0;
+    knob-inset: 0.0 0.0 0.0 0.0;
+    track-inset: 0.0 -10.0 0.0 -11.0;
+    knob-color: url("scroller-horizontal-knob-left.png") 10.0 15.0
+                url("scroller-horizontal-knob-center.png") 1.0 15.0
+                url("scroller-horizontal-knob-right.png") 10.0 15.0
+                repeat-x;
+    knob-slot-color: url("scroller-horizontal-track.png") 1.0 15.0;
+    decrement-line-size: 24.0 15.0;
+    decrement-line-color: url("scroller-left-arrow.png") 24.0 15.0;
+    increment-line-size: 24.0 15.0;
+    increment-line-color: url("scroller-right-arrow.png") 24.0 15.0;    
+}
+
+scroller.disabled {
+    knob-color: url("scroller-horizontal-knob-disabled-left.png") 10.0 15.0
+                url("scroller-horizontal-knob-disabled-center.png") 1.0 15.0
+                url("scroller-horizontal-knob-disabled-right.png") 10.0 15.0
+                repeat-x;
+    knob-slot-color: url("scroller-horizontal-track-disabled.png") 1.0 15.0;
+    decrement-line-color: url("scroller-left-arrow-disabled.png") 24.0 15.0;
+    increment-line-color: url("scroller-right-arrow-disabled.png") 24.0 15.0;
+}
+
+scroller.highlighted {
+    decrement-line-color: url("scroller-left-arrow-highlighted.png") 24.0 15.0;
+    increment-line-color: url("scroller-right-arrow-highlighted.png") 24.0 15.0;
+}
+
+scroller.vertical {
+    minimum-knob-length: 21.0;
+    knob-inset: 0.0 0.0 0.0 0.0;
+    track-inset: -10.0 0.0 -10.0 0.0;
+    knob-color: url("scroller-vertical-knob-top.png") 15.0 10.0
+                url("scroller-vertical-knob-center.png") 15.0 1.0
+                url("scroller-vertical-knob-bottom.png") 15.0 10.0
+                repeat-y;
+    knob-slot-color: url("scroller-vertical-track.png") 15.0 1.0;
+    decrement-line-size: 15.0 24.0;
+    decrement-line-color: url("scroller-up-arrow.png") 15.0 24.0;
+    increment-line-size: 15.0 24.0;
+    increment-line-color: url("scroller-down-arrow.png") 15.0 24.0;    
+}
+
+scroller.vertical.disabled {
+    knob-color: url("scroller-horizontal-knob-disabled-top.png") 15.0 10.0
+                url("scroller-horizontal-knob-disabled-center.png") 15.0 1.0
+                url("scroller-horizontal-knob-disabled-bottom.png") 15.0 10.0
+                repeat-y;
+    knob-slot-color: url("scroller-vertical-track-disabled.png") 15.0 1.0;
+    decrement-line-color: url("scroller-up-arrow-disabled.png") 15.0 24.0;
+    increment-line-color: url("scroller-down-arrow-disabled.png") 15.0 24.0;
+}
+
+scroller.vertical.highlighted {
+    decrement-line-color: url("scroller-up-arrow-highlighted.png") 15.0 24.0;
+    increment-line-color: url("scroller-down-arrow-highlighted.png") 15.0 24.0;
+}
+
+textField {
+    font: 12.0;
+}
+
+textField.bezeled {
+    bezel-color:    url("textfield-bezel-square-0.png") 2.0 3.0
+                    url("textfield-bezel-square-1.png") 1.0 3.0
+                    url("textfield-bezel-square-2.png") 2.0 3.0
+                    url("textfield-bezel-square-3.png") 2.0 1.0
+                    url("textfield-bezel-square-4.png") 1.0 1.0
+                    url("textfield-bezel-square-5.png") 2.0 1.0
+                    url("textfield-bezel-square-6.png") 2.0 2.0
+                    url("textfield-bezel-square-7.png") 1.0 2.0
+                    url("textfield-bezel-square-8.png") 2.0 2.0;
+    font: 12.0;
+    content-inset: 9.0 7.0 5.0 8.0;
+    bezel-inset: 4.0 4.0 3.0 4.0;
+}
+
+textField.bezeled.editing {
+    bezel-color:    url("textfield-bezel-square-focused-0.png") 6.0 7.0
+                    url("textfield-bezel-square-focused-1.png") 1.0 7.0
+                    url("textfield-bezel-square-focused-2.png") 6.0 7.0
+                    url("textfield-bezel-square-focused-3.png") 6.0 1.0
+                    url("textfield-bezel-square-focused-4.png") 1.0 1.0
+                    url("textfield-bezel-square-focused-5.png") 6.0 1.0
+                    url("textfield-bezel-square-focused-6.png") 6.0 5.0
+                    url("textfield-bezel-square-focused-7.png") 1.0 5.0
+                    url("textfield-bezel-square-focused-8.png") 6.0 5.0;
+    bezel-inset: 0.0 0.0 0.0 0.0;
+}
+
+textField.CPTextFieldStatePlaceholder {
+    text-color: rgb(189.0, 199.0, 211.0);
+}
+
+textField.tableDataView {
+    line-break-mode: CPLineBreakByTruncatingTail;
+    vertical-alignment: CPCenterVerticalTextAlignment;
+    content-inset: 0.0 0.0 0.0 5.0;
+    text-color: rgb(51.0, 51.0, 51.0);
+}
+
+textField.tableDataView.selectedTableDataView {
+    text-color: white;
+    font: 12.0;
+}
+
+textField.CPTextFieldStateRounded.bezeled {
+    bezel-color:    url("textfield-bezel-rounded-left.png") 13.0 22.0
+                    url("textfield-bezel-rounded-center.png") 1.0 22.0
+                    url("textfield-bezel-rounded-right.png") 13.0 22.0
+                    repeat-x;
+    content-inset: 9.0 16.0 6.0 14.0;
+    bezel-inset: 4.0 4.0 4.0 4.0;
+    min-size: 0.0 30.0;
+    max-size: -1.0 30.0;
+}
+
+textField.CPTextFieldStateRounded.bezeled.editing {
+    bezel-color:    url("textfield-bezel-rounded-focused-left.png") 17.0 30.0
+                    url("textfield-bezel-rounded-focused-center.png") 1.0 30.0
+                    url("textfield-bezel-rounded-focused-right.png") 17.0 30.0
+                    repeat-x;
+    bezel-inset: 0.0 0.0 0.0 0.0;
+}
+
+textField.CPTextFieldStateRounded.CPTextFieldStatePlaceholder {
+    text-color: rgb(189.0, 199.0, 211.0);
+}
+
+radio {
+    min-size: 0.0 17.0;
+    max-size: -1.0 -1.0;
+    imageOffset: CPRadioImageOffset;
+}
+
+radio.normal {
+    alignment: CPLeftTextAlignment;
+    font: 12.0;
+    content-inset: 0.0 0.0 0.0 0.0;
+    image: url("radio-image.png") 17.0 17.0;
+}
+
+radio.selected {
+    image: url("radio-image-selected.png") 17.0 17.0;
+}
+
+radio.highlighted {
+    image: url("radio-image-highlighted.png") 17.0 17.0;
+}
+
+radio.disabled {
+    image: url("radio-image-disabled.png") 17.0 17.0;
+    text-color: rgb(79.0, 79.0, 79.0);
+}
+
+radio.selected.highlighted {
+    image: url("radio-image-selected-highlighted.png") 17.0 17.0;
+}
+
+radio.selected.disabled {
+    image: url("radio-image-selected-disabled.png") 17.0 17.0;
+}
+
+checkbox {
+    min-size: 0.0 17.0;
+    max-size: -1.0 -1.0;
+    imageOffset: CPCheckBoxImageOffset;
+}
+
+checkbox.normal {
+    alignment: CPLeftTextAlignment;
+    font: 12.0;
+    content-inset: 0.0 0.0 0.0 0.0;
+    image: url("check-box-image.png") 15.0 16.0;
+}
+
+checkbox.selected {
+    image: url("check-box-image-selected.png") 15.0 16.0;
+}
+
+checkbox.highlighted {
+    image: url("check-box-image-highlighted.png") 15.0 16.0;
+}
+
+checkbox.disabled {
+    image: url("check-box-image-disabled.png") 15.0 16.0;
+    text-color: rgb(79.0, 79.0, 79.0);
+}
+
+checkbox.selected.highlighted {
+    image: url("check-box-image-selected-highlighted.png") 15.0 16.0;
+}
+
+checkbox.selected.disabled {
+    image: url("check-box-image-selected-disabled.png") 15.0 16.0;
+}
+
+checkbox.CPButtonStateMixed {
+    image: url("check-box-image-mixed.png") 15.0 16.0;
+    imageOffset: CPCheckBoxImageOffset;
+}
+
+checkbox.CPButtonStateMixed.highlighted {
+    image: url("check-box-image-mixed-highlighted.png") 15.0 16.0;
+}
+
+checkbox.CPButtonStateMixed.disabled {
+    image: url("check-box-image-mixed-disabled.png") 15.0 16.0;
+}
+
+segmentedControl {
+    font: bold 12.0;
+    text-color: rgb(79.0, 79.0, 79.0);
+    text-shadow-color: var(TextShadowColor);
+    text-shadow-offset: 0.0 1.0;
+    line-break-mode: CPLineBreakByTruncatingTail;
+    divider-thickness: 1.0;
+    default-height: 24.0;
+}
+
+segmentedControl.normal {
+    center-segment-bezel-color: url("segmented-control-bezel-center.png") 1.0 24.0;
+    divider-bezel-color: url("segmented-control-bezel-divider.png") 1.0 24.0;
+    left-segment-bezel-color: url("segmented-control-bezel-left.png") 4.0 24.0;
+    right-segment-bezel-color: url("segmented-control-bezel-right.png") 4.0 24.0;
+    content-inset: 0.0 4.0 0.0 4.0;
+    bezel-inset: 0.0 0.0 0.0 0.0;
+}
+
+segmentedControl.disabled {
+    center-segment-bezel-color: url("segmented-control-bezel-disabled-center.png") 1.0 24.0;
+    divider-bezel-color: url("segmented-control-bezel-disabled-divider.png") 1.0 24.0;
+    left-segment-bezel-color: url("segmented-control-bezel-disabled-left.png") 4.0 24.0;
+    right-segment-bezel-color: url("segmented-control-bezel-disabled-right.png") 4.0 24.0;
+    text-color: rgb(0.6, 0.6, 0.6);
+    text-shadow-color: var(DisabledTextShadowColor);
+}
+
+segmentedControl.selected {
+    center-segment-bezel-color: url("segmented-control-bezel-highlighted-center.png") 1.0 24.0;
+    divider-bezel-color: url("segmented-control-bezel-highlighted-divider.png") 1.0 24.0;
+    left-segment-bezel-color: url("segmented-control-bezel-highlighted-left.png") 4.0 24.0;
+    right-segment-bezel-color: url("segmented-control-bezel-highlighted-right.png") 4.0 24.0;
+}
+
+segmentedControl.highlighted {
+    center-segment-bezel-color: url("segmented-control-bezel-pushed-center.png") 1.0 24.0;
+    left-segment-bezel-color: url("segmented-control-bezel-pushed-left.png") 4.0 24.0;
+    right-segment-bezel-color: url("segmented-control-bezel-pushed-right.png") 4.0 24.0;
+}
+
+segmentedControl.selected.disabled {
+    center-segment-bezel-color: url("segmented-control-bezel-highlighted-disabled-center.png") 1.0 24.0;
+    divider-bezel-color: url("segmented-control-bezel-highlighted-disabled-divider.png") 1.0 24.0;
+    left-segment-bezel-color: url("segmented-control-bezel-highlighted-disabled-left.png") 4.0 24.0;
+    right-segment-bezel-color: url("segmented-control-bezel-highlighted-disabled-right.png") 4.0 24.0;
+}
+
+segmentedControl.selected.highlighted {
+    center-segment-bezel-color: url("segmented-control-bezel-pushed-highlighted-center.png") 1.0 24.0;
+    left-segment-bezel-color: url("segmented-control-bezel-pushed-highlighted-left.png") 4.0 24.0;
+    right-segment-bezel-color: url("segmented-control-bezel-pushed-highlighted-right.png") 4.0 24.0;
+}
+
+slider {
+    track-width: 5.0;
+    track-color:    url("horizontal-track-left.png") 4.0 5.0
+                    url("horizontal-track-center.png") 1.0 5.0
+                    url("horizontal-track-right.png") 4.0 5.0
+                    repeat-x;
+    knob-size: 23.0 24.0;
+    knob-color: url("knob.png") 23.0 24.0;
+}
+
+slider.disabled {
+    track-color:    url("horizontal-track-disabled-left.png") 4.0 5.0
+                    url("horizontal-track-disabled-center.png") 1.0 5.0
+                    url("horizontal-track-disabled-right.png") 4.0 5.0
+                    repeat-x;
+    knob-color: url("knob-disabled.png") 23.0 24.0;
+}
+
+slider.highlighted {
+    knob-color: url("knob-disabled.png") 23.0 24.0;
+}
+
+slider.vertical {
+    track-color:    url("vertical-track-left.png") 5.0 6.0
+                    url("vertical-track-center.png") 5.0 1.0
+                    url("vertical-track-right.png") 5.0 4.0
+                    repeat-y;
+}
+
+slider.vertical.disabled {
+    track-color:    url("vertical-track-disabled-left.png") 5.0 6.0
+                    url("vertical-track-disabled-center.png") 5.0 1.0
+                    url("vertical-track-disabled-right.png") 5.0 6.0
+                    repeat-y;
+}
+
+slider.circular {
+    track-color: url("slider-circular-bezel.png") 34.0 34.0;
+    knob-size: 5.0 5.0;
+    knob-color: url("slider-circular-knob.png") 5.0 5.0;
+}
+
+slider.circular.disabled {
+    track-color: url("slider-circular-disabled-bezel.png") 34.0 34.0;
+    knob-color: url("slider-circular-disabled-knob.png") 5.0 5.0;
+}
+
+slider.circular.highlighted {
+    knob-color: url("slider-circular-knob.png") 5.0 5.0;
+}
+
+buttonBar {
+    bezel-color: url("buttonbar-bezel.png") 1.0 26.0;
+    resize-control-size: 5.0 10.0;
+    resize-control-inset: 9.0 4.0 7.0 4.0;
+    resize-control-color: url("buttonbar-resize-control.png") 5.0 10.0;
+    button-bezel-color: url("buttonbar-button-bezel-left.png") 2.0 25.0
+                        url("buttonbar-button-bezel-center.png") 1.0 25.0
+                        url("buttonbar-button-bezel-right.png") 2.0 25.0
+                        repeat-x;
+    button-text-color: black;
+}
+
+buttonBar.highlighted {
+    button-bezel-color: url("buttonbar-button-bezel-highlighted-left.png") 2.0 25.0
+                        url("buttonbar-button-bezel-highlighted-center.png") 1.0 25.0
+                        url("buttonbar-button-bezel-highlighted-right.png") 2.0 25.0
+                        repeat-x;
+}
+
+buttonBar.disabled {
+    button-bezel-color: url("buttonbar-button-bezel-disabled-left.png") 2.0 25.0
+                        url("buttonbar-button-bezel-disabled-center.png") 1.0 25.0
+                        url("buttonbar-button-bezel-disabled-right.png") 2.0 25.0
+                        repeat-x;
+}
+
+tableHeaderView {
+    background-color: url("tableview-headerview.png") 1.0 23.0;
+    divider-color: #dce0e2;
+}
+
+splitView {
+    divider-thickness: 10.0;
+    pane-divider-thickness: 1.0;
+}
+
+alert {
+    size: 400.0 110.0;
+    content-inset: 15 15 15 80;
+    message-text-alignment: CPJustifiedTextAlignment;
+    message-text-color: black;
+    message-text-font: bold 13.0;
+    informative-text-alignment: CPJustifiedTextAlignment;
+    informative-text-color: black;
+    informative-text-font: 12.0;
+    image-offset: 15.0 18.0;
+    information-image: url("alert-info.png") 53.0 46.0;
+    warning-image: url("alert-warning.png") 53.0 46.0;
+    error-image: url("alert-error.png") 53.0 46.0;
 }
