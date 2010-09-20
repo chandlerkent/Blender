@@ -39,7 +39,7 @@
                                 ["Stmt StmtList", "$2.unshift($1); $$ = $2;"],
                             ],
         "Stmt":             [
-                                ["Class ThemeStateList { AttributeList }", "$$ = new yy.ClassNode($1, $4, $2);"],
+                                ["Class ThemeStateList { DeclarationList }", "$$ = new yy.ClassNode($1, $4, $2);"],
                             ],
         "ThemeStateList":   [
                                 ["", "$$ = [];"],
@@ -53,17 +53,14 @@
                             ],
         "VariableList":     [
                                 ["", ""],
-                                ["Variable VariableList", "yy.VariableList.setVariable($1);"],
+                                ["Declaration VariableList", "yy.VariableList.setVariable($1);"],
                             ],
-        "Variable":         [
-                                ["Attribute", "$$ = $1;"],
-                            ],
-        "AttributeList":    [
+        "DeclarationList":  [
                                 ["", "$$ = [];"],
-                                ["Attribute AttributeList", "$2.unshift($1); $$ = $2;"],
+                                ["Declaration DeclarationList", "$2.unshift($1); $$ = $2;"],
                             ],
-        "Attribute":        [
-                                ["Key : Value ;", "if ($3.setIsInsetRect) { $3.setIsInsetRect($1.indexOf('inset') > -1) }; $$ = new yy.AttributeNode($1, $3);"]
+        "Declaration":      [
+                                ["Key : Value ;", "if ($3.setIsInsetRect) { $3.setIsInsetRect($1.indexOf('inset') > -1) }; $$ = new yy.DeclarationNode($1, $3);"]
                             ],
         "Key":              [
                                 ["IDENT", "$$ = $1;"]
