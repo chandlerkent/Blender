@@ -3,18 +3,18 @@
     DisabledTextShadowColor: rgba(240.0, 240.0, 240.0, 0.6);
 }
 
-@ThemeName Aristo;
+@ThemeName BlenderTest;
 
 button {
     line-break-mode: CPLineBreakByTruncatingTail;
-    image-offset: CPButtonImageOffset;
-    text-color: rgb(79.0, 79.0, 79.0);
+    image-offset: CPButtonDefaultHeight;
+    text-color: rgb(79.0, 79.0, 79.0); 
     min-size: 0.0 24.0;
     max-size: -1.0 24.0;
 }
 
 button.bordered {
-    font: 12.0;
+    font: bold 12.0;
     text-shadow-color: var(TextShadowColor);
     text-shadow-offset: 0.0 1.0;
     content-inset: 0.0 5.0 0.0 5.0;
@@ -29,7 +29,10 @@ button.default {
 }
 
 button.highlighted {
-    bezel-color: url("button-bezel-highlighted-left.png") 4.0 24.0 url("button-bezel-highlighted-center.png") 1.0 24.0 url("button-bezel-highlighted-right.png") 4.0 24.0 repeat-x;
+    bezel-color:    url("button-bezel-highlighted-left.png") 4.0 24.0
+                    url("button-bezel-highlighted-center.png") 1.0 24.0
+                    url("button-bezel-highlighted-right.png") 4.0 24.0
+                    repeat-x;
 }
 
 button.disabled {
@@ -37,7 +40,6 @@ button.disabled {
 }
 
 button.bordered.disabled {
-    text-color: rgb(240.0, 240.0, 240.0);
     text-shadow-color: var(TextShadowColor);
     bezel-color:    url("button-bezel-disabled-left.png") 4.0 24.0
                     url("button-bezel-disabled-center.png") 1.0 24.0
@@ -49,13 +51,6 @@ button.bordered.highlighted {
     bezel-color:    url("button-bezel-highlighted-left.png") 4.0 24.0
                     url("button-bezel-highlighted-center.png") 1.0 24.0
                     url("button-bezel-highlighted-right.png") 4.0 24.0
-                    repeat-x;
-}
-
-button.bordered.disabled {
-    bezel-color:    url("default-button-bezel-disabled-left.png") 4.0 24.0
-                    url("default-button-bezel-disabled-center.png") 1.0 24.0
-                    url("default-button-bezel-disabled-right.png") 4.0 24.0
                     repeat-x;
 }
 
@@ -85,7 +80,7 @@ button.bordered.highlighted.default {
 }
 
 popUpButton {
-    font: 12.0;
+    font: bold 12.0;
     text-color: rgb(0.6, 0.6, 0.6);
     text-shadow-color: var(TextShadowColor);
     min-size: 32.0 24.0;
@@ -109,24 +104,11 @@ popUpButton.bordered.disabled {
     text-shadow-color: var(DisabledTextShadowColor);    
 }
 
-pullDownMenu {
-    font: 12.0;
-    text-color: rgb(0.6, 0.6, 0.6);
-    text-shadow-color: var(TextShadowColor);
-    min-size: 32.0 24.0;
-    max-size: -1.0 24.0;
-}
-
-pullDownMenu.bordered {
+popUpButton.bordered {
     content-inset: 0 32.0 0 5.0;
 }
 
-pullDownMenu.bordered.disabled {
-    text-color: rgb(0.6, 0.6, 0.6);
-    text-shadow-color: var(DisabledTextShadowColor);
-}
-
-pullDownMenu.CPPopUpButtonStatePullsDown.bordered {
+popUpButton.CPPopUpButtonStatePullsDown.bordered {
     bezel-color:    url("button-bezel-left.png") 4.0 24.0
                     url("button-bezel-center.png") 1.0 24.0
                     url("popup-bezel-right-pullsdown.png") 27.0 24.0
@@ -134,7 +116,7 @@ pullDownMenu.CPPopUpButtonStatePullsDown.bordered {
     
 }
 
-pullDownMenu.CPPopUpButtonStatePullsDown.bordered.disabled {
+popUpButton.CPPopUpButtonStatePullsDown.bordered.disabled {
     bezel-color:    url("button-bezel-disabled-left.png") 4.0 24.0
                     url("button-bezel-disabled-center.png") 1.0 24.0
                     url("popup-bezel-disabled-right-pullsdown.png") 27.0 24.0
@@ -280,7 +262,7 @@ textField.CPTextFieldStateRounded.CPTextFieldStatePlaceholder {
 radio {
     min-size: 0.0 17.0;
     max-size: -1.0 -1.0;
-    imageOffset: CPRadioImageOffset;
+/*    imageOffset: CPRadioImageOffset;*/
 }
 
 radio.normal {
@@ -311,50 +293,50 @@ radio.selected.disabled {
     image: url("radio-image-selected-disabled.png") 17.0 17.0;
 }
 
-checkbox {
+checkBox {
     min-size: 0.0 17.0;
     max-size: -1.0 -1.0;
-    imageOffset: CPCheckBoxImageOffset;
+/*    imageOffset: CPCheckBoxImageOffset;*/
 }
 
-checkbox.normal {
+checkBox.normal {
     alignment: CPLeftTextAlignment;
     font: 12.0;
     content-inset: 0.0 0.0 0.0 0.0;
     image: url("check-box-image.png") 15.0 16.0;
 }
 
-checkbox.selected {
+checkBox.selected {
     image: url("check-box-image-selected.png") 15.0 16.0;
 }
 
-checkbox.highlighted {
+checkBox.highlighted {
     image: url("check-box-image-highlighted.png") 15.0 16.0;
 }
 
-checkbox.disabled {
+checkBox.disabled {
     image: url("check-box-image-disabled.png") 15.0 16.0;
     text-color: rgb(79.0, 79.0, 79.0);
 }
 
-checkbox.selected.highlighted {
+checkBox.selected.highlighted {
     image: url("check-box-image-selected-highlighted.png") 15.0 16.0;
 }
 
-checkbox.selected.disabled {
+checkBox.selected.disabled {
     image: url("check-box-image-selected-disabled.png") 15.0 16.0;
 }
 
-checkbox.CPButtonStateMixed {
+checkBox.CPButtonStateMixed {
     image: url("check-box-image-mixed.png") 15.0 16.0;
-    imageOffset: CPCheckBoxImageOffset;
+/*    imageOffset: CPCheckBoxImageOffset;*/
 }
 
-checkbox.CPButtonStateMixed.highlighted {
+checkBox.CPButtonStateMixed.highlighted {
     image: url("check-box-image-mixed-highlighted.png") 15.0 16.0;
 }
 
-checkbox.CPButtonStateMixed.disabled {
+checkBox.CPButtonStateMixed.disabled {
     image: url("check-box-image-mixed-disabled.png") 15.0 16.0;
 }
 

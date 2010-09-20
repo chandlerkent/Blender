@@ -1,0 +1,6 @@
+#!/usr/bin/env narwhal
+
+var blender = require("../lib/blender");
+
+if (require.main === module)
+    require("os").exit(blender.main());
