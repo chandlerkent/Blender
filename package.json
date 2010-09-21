@@ -1,6 +1,7 @@
 {
-    "name": "",
-    "author": "",
-    "dependencies": [],
-    "contributors": []
+    "name": "Blender",
+    "author": "Chandler Kent",
+    "description": "Build Cappuccino theme files using CSS",
+    "keywords": ["cappuccino", "theme", "theming", "blend"],
+    "version": "0.1.0"
 }
