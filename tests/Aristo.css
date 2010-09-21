@@ -1,5 +1,9 @@
 @variables {
+    ButtonFont: bold 12.0;
+    TextColor: rgb(79.0, 79.0, 79.0);
+    PlaceholderTextColor: rgb(189.0, 199.0, 211.0);
     TextShadowColor: rgb(240.0, 240.0, 240.0);
+    DisabledTextColor: rgb(0.6, 0.6, 0.6);
     DisabledTextShadowColor: rgba(240.0, 240.0, 240.0, 0.6);
 }
 
@@ -8,13 +12,13 @@
 button[param=@CGRectMake(0.0, 0.0, 60.0, CPButtonDefaultHeight)@] {
     line-break-mode: CPLineBreakByTruncatingTail;
     image-offset: CPButtonDefaultHeight;
-    text-color: rgb(79.0, 79.0, 79.0); 
+    text-color: var(TextColor); 
     min-size: 0.0 24.0;
     max-size: -1.0 24.0;
 }
 
 button.bordered {
-    font: bold 12.0;
+    font: var(ButtonFont);
     text-shadow-color: var(TextShadowColor);
     text-shadow-offset: 0.0 1.0;
     content-inset: 0.0 5.0 0.0 5.0;
@@ -36,7 +40,7 @@ button.highlighted {
 }
 
 button.disabled {
-    text-color: rgb(0.6, 0.6, 0.6);
+    text-color: var(DisabledTextColor);
 }
 
 button.bordered.disabled {
@@ -80,8 +84,8 @@ button.bordered.highlighted.default {
 }
 
 popUpButton[initializer=@initWithFrame:pullsDown:@][param=@CGRectMake(0.0, 0.0, 100.0, 24.0)@][param=@NO@] {
-    font: bold 12.0;
-    text-color: rgb(0.6, 0.6, 0.6);
+    font: var(ButtonFont);
+    text-color: var(TextColor);
     text-shadow-color: var(TextShadowColor);
     min-size: 32.0 24.0;
     max-size: -1.0 24.0;
@@ -100,12 +104,8 @@ popUpButton.bordered.disabled {
                     url("button-bezel-disabled-center.png") 1.0 24.0
                     url("popup-bezel-disabled-right.png") 27.0 24.0
                     repeat-x;
-    text-color: rgb(0.6, 0.6, 0.6);
+    text-color: var(DisabledTextColor);
     text-shadow-color: var(DisabledTextShadowColor);    
-}
-
-popUpButton.bordered {
-    content-inset: 0 32.0 0 5.0;
 }
 
 popUpButton.CPPopUpButtonStatePullsDown.bordered {
@@ -221,7 +221,7 @@ textField.bezeled.editing {
 }
 
 textField.CPTextFieldStatePlaceholder {
-    text-color: rgb(189.0, 199.0, 211.0);
+    text-color: var(PlaceholderTextColor);
 }
 
 textField.tableDataView {
@@ -256,13 +256,13 @@ textField.CPTextFieldStateRounded.bezeled.editing {
 }
 
 textField.CPTextFieldStateRounded.CPTextFieldStatePlaceholder {
-    text-color: rgb(189.0, 199.0, 211.0);
+    text-color: var(PlaceholderTextColor);
 }
 
 radio {
     min-size: 0.0 17.0;
     max-size: -1.0 -1.0;
-/*    imageOffset: CPRadioImageOffset;*/
+    imageOffset: CPRadioImageOffset;
 }
 
 radio.normal {
@@ -282,7 +282,7 @@ radio.highlighted {
 
 radio.disabled {
     image: url("radio-image-disabled.png") 17.0 17.0;
-    text-color: rgb(79.0, 79.0, 79.0);
+    text-color: var(DisabledTextColor);
 }
 
 radio.selected.highlighted {
@@ -296,7 +296,7 @@ radio.selected.disabled {
 checkBox {
     min-size: 0.0 17.0;
     max-size: -1.0 -1.0;
-/*    imageOffset: CPCheckBoxImageOffset;*/
+    imageOffset: CPCheckBoxImageOffset;
 }
 
 checkBox.normal {
@@ -316,7 +316,7 @@ checkBox.highlighted {
 
 checkBox.disabled {
     image: url("check-box-image-disabled.png") 15.0 16.0;
-    text-color: rgb(79.0, 79.0, 79.0);
+    text-color: var(DisabledTextColor);
 }
 
 checkBox.selected.highlighted {
@@ -329,7 +329,7 @@ checkBox.selected.disabled {
 
 checkBox.CPButtonStateMixed {
     image: url("check-box-image-mixed.png") 15.0 16.0;
-/*    imageOffset: CPCheckBoxImageOffset;*/
+    imageOffset: CPCheckBoxImageOffset;
 }
 
 checkBox.CPButtonStateMixed.highlighted {
@@ -341,8 +341,8 @@ checkBox.CPButtonStateMixed.disabled {
 }
 
 segmentedControl {
-    font: bold 12.0;
-    text-color: rgb(79.0, 79.0, 79.0);
+    font: var(ButtonFont);
+    text-color: var(TextColor);
     text-shadow-color: var(TextShadowColor);
     text-shadow-offset: 0.0 1.0;
     line-break-mode: CPLineBreakByTruncatingTail;
@@ -364,7 +364,7 @@ segmentedControl.disabled {
     divider-bezel-color: url("segmented-control-bezel-disabled-divider.png") 1.0 24.0;
     left-segment-bezel-color: url("segmented-control-bezel-disabled-left.png") 4.0 24.0;
     right-segment-bezel-color: url("segmented-control-bezel-disabled-right.png") 4.0 24.0;
-    text-color: rgb(0.6, 0.6, 0.6);
+    text-color: var(DisabledTextColor);
     text-shadow-color: var(DisabledTextShadowColor);
 }
 
@@ -413,7 +413,7 @@ slider.disabled {
 }
 
 slider.highlighted {
-    knob-color: url("knob-disabled.png") 23.0 24.0;
+    knob-color: url("knob-highlighted.png") 23.0 24.0;
 }
 
 slider.vertical {
@@ -432,8 +432,8 @@ slider.vertical.disabled {
 
 slider.circular {
     track-color: url("slider-circular-bezel.png") 34.0 34.0;
-    knob-size: 5.0 5.0;
     knob-color: url("slider-circular-knob.png") 5.0 5.0;
+    knob-size: 5.0 5.0;
 }
 
 slider.circular.disabled {
@@ -442,7 +442,7 @@ slider.circular.disabled {
 }
 
 slider.circular.highlighted {
-    knob-color: url("slider-circular-knob.png") 5.0 5.0;
+    knob-color: url("slider-circular-highlighted-knob.png") 5.0 5.0;
 }
 
 buttonBar[param=@CGRectMake(0.0, 0.0, 147.0, 26.0)@] {
