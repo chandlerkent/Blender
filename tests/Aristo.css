@@ -7,7 +7,7 @@
     DisabledTextShadowColor: rgba(240.0, 240.0, 240.0, 0.6);
 }
 
-@ThemeName BlenderTest;
+@ThemeName Aristo;
 
 button[param=@CGRectMake(0.0, 0.0, 60.0, CPButtonDefaultHeight)@] {
     line-break-mode: CPLineBreakByTruncatingTail;
