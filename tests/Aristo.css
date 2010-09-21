@@ -262,7 +262,7 @@ textField.CPTextFieldStateRounded.CPTextFieldStatePlaceholder {
 radio {
     min-size: 0.0 17.0;
     max-size: -1.0 -1.0;
-    imageOffset: CPRadioImageOffset;
+    image-offset: CPRadioImageOffset;
 }
 
 radio.normal {
@@ -296,7 +296,7 @@ radio.selected.disabled {
 checkBox {
     min-size: 0.0 17.0;
     max-size: -1.0 -1.0;
-    imageOffset: CPCheckBoxImageOffset;
+    image-offset: CPCheckBoxImageOffset;
 }
 
 checkBox.normal {
@@ -329,7 +329,7 @@ checkBox.selected.disabled {
 
 checkBox.CPButtonStateMixed {
     image: url("check-box-image-mixed.png") 15.0 16.0;
-    imageOffset: CPCheckBoxImageOffset;
+    image-offset: CPCheckBoxImageOffset;
 }
 
 checkBox.CPButtonStateMixed.highlighted {
