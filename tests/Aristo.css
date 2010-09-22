@@ -174,9 +174,9 @@ scroller.vertical {
 }
 
 scroller.vertical.disabled {
-    knob-color: url("scroller-horizontal-knob-disabled-top.png") 15.0 10.0
-                url("scroller-horizontal-knob-disabled-center.png") 15.0 1.0
-                url("scroller-horizontal-knob-disabled-bottom.png") 15.0 10.0
+    knob-color: url("scroller-vertical-knob-disabled-top.png") 15.0 10.0
+                url("scroller-vertical-knob-disabled-center.png") 15.0 1.0
+                url("scroller-vertical-knob-disabled-bottom.png") 15.0 10.0
                 repeat-y;
     knob-slot-color: url("scroller-vertical-track-disabled.png") 15.0 1.0;
     decrement-line-color: url("scroller-up-arrow-disabled.png") 15.0 24.0;
@@ -259,37 +259,37 @@ textField.CPTextFieldStateRounded.CPTextFieldStatePlaceholder {
     text-color: var(PlaceholderTextColor);
 }
 
-radio {
+radioButton {
     min-size: 0.0 17.0;
     max-size: -1.0 -1.0;
     image-offset: CPRadioImageOffset;
 }
 
-radio.normal {
+radioButton.normal {
     alignment: CPLeftTextAlignment;
     font: 12.0;
     content-inset: 0.0 0.0 0.0 0.0;
     image: url("radio-image.png") 17.0 17.0;
 }
 
-radio.selected {
+radioButton.selected {
     image: url("radio-image-selected.png") 17.0 17.0;
 }
 
-radio.highlighted {
+radioButton.highlighted {
     image: url("radio-image-highlighted.png") 17.0 17.0;
 }
 
-radio.disabled {
+radioButton.disabled {
     image: url("radio-image-disabled.png") 17.0 17.0;
     text-color: var(DisabledTextColor);
 }
 
-radio.selected.highlighted {
+radioButton.selected.highlighted {
     image: url("radio-image-selected-highlighted.png") 17.0 17.0;
 }
 
-radio.selected.disabled {
+radioButton.selected.disabled {
     image: url("radio-image-selected-disabled.png") 17.0 17.0;
 }
 
@@ -417,16 +417,16 @@ slider.highlighted {
 }
 
 slider.vertical {
-    track-color:    url("vertical-track-left.png") 5.0 6.0
+    track-color:    url("vertical-track-top.png") 5.0 6.0
                     url("vertical-track-center.png") 5.0 1.0
-                    url("vertical-track-right.png") 5.0 4.0
+                    url("vertical-track-bottom.png") 5.0 4.0
                     repeat-y;
 }
 
 slider.vertical.disabled {
-    track-color:    url("vertical-track-disabled-left.png") 5.0 6.0
+    track-color:    url("vertical-track-disabled-top.png") 5.0 6.0
                     url("vertical-track-disabled-center.png") 5.0 1.0
-                    url("vertical-track-disabled-right.png") 5.0 6.0
+                    url("vertical-track-disabled-bottom.png") 5.0 6.0
                     repeat-y;
 }
 
@@ -442,7 +442,7 @@ slider.circular.disabled {
 }
 
 slider.circular.highlighted {
-    knob-color: url("slider-circular-highlighted-knob.png") 5.0 5.0;
+    knob-color: url("slider-circular-knob.png") 5.0 5.0;
 }
 
 buttonBar[param=@CGRectMake(0.0, 0.0, 147.0, 26.0)@] {
