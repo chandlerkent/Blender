@@ -16,13 +16,13 @@ Blender also requires [Jison](https://github.com/zaach/jison), so if you haven't
 
 Blender includes a command-line utility  called `blend`. To use `blend`:
 
-    Usage: blend [OPTIONS] INPUT_FILE
+    Usage: blender.js [OPTIONS] INPUT_FILE [OUTPUT_DIR]
     Compiles a CSS file to a Cappuccino category of a theme file.
      -t THEME: Set the theme name. Overrides anything set in CSS file.
      -c CLASS: Set the class name. This will be used to create the category.
      -h --help: displays usage information (final option)
     
-Blender will output a Theme Descriptor file in the current directory whose name is CLASS (default ThemeDescriptors) + THEME (default DefaultThemeName) .j. So for example:
+Blender will output a Theme Descriptor file in the specified OUTPUT_DIR (or current directory if none specified) whose name is CLASS (default ThemeDescriptors) + THEME (default DefaultThemeName) .j. So for example:
 
     blend -t Aristo -c ThemeDescriptors Aristo.css -> ThemeDescriptors+Aristo.j
     
