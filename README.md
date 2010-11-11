@@ -115,7 +115,7 @@ TODO: Add more examples.
 # TODO
 
 - Support private classes that begin with `_`
-- Find a way to make it easy to generate a ThemeDescriptor for a showcase
+- [DONE] Find a way to make it easy to generate a ThemeDescriptor for a showcase
 - .j -> .css?
 - Squash the (many, I'm sure) bugs
 - Test
