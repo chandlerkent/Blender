@@ -9,7 +9,7 @@
 
 @ThemeName Aristo;
 
-button[param=@CGRectMake(0.0, 0.0, 60.0, CPButtonDefaultHeight)@] {
+button {
     line-break-mode: CPLineBreakByTruncatingTail;
     image-offset: CPButtonDefaultHeight;
     text-color: var(TextColor); 
@@ -83,7 +83,7 @@ button.bordered.highlighted.default {
                     repeat-x;
 }
 
-popUpButton[initializer=@initWithFrame:pullsDown:@][param=@CGRectMake(0.0, 0.0, 100.0, 24.0)@][param=@NO@] {
+popUpButton {
     font: var(ButtonFont);
     text-color: var(TextColor);
     text-shadow-color: var(TextShadowColor);
@@ -123,12 +123,12 @@ popUpButton.CPPopUpButtonStatePullsDown.bordered.disabled {
                     repeat-x;
 }
 
-scrollView[param=@CGRectMake(0.0, 0.0, 200.0, 200.0)@] {
+scrollView {
     border-color: rgba(0.0, 0.0, 0.0, 0.2);
     bottom-corner-color: url("scrollview-bottom-corner-color.png") 15.0 15.0;
 }
 
-scroller[param=@CGRectMake(0.0, 0.0, 15.0, 170.0)@] {
+scroller {
     minimum-knob-length: 21.0;
     knob-inset: 0.0 0.0 0.0 0.0;
     track-inset: 0.0 -10.0 0.0 -11.0;
@@ -188,7 +188,7 @@ scroller.vertical.highlighted {
     increment-line-color: url("scroller-down-arrow-highlighted.png") 15.0 24.0;
 }
 
-textField[param=@CGRectMake(0.0, 0.0, 60.0, 29.0)@] {
+textField {
     font: 12.0;
 }
 
@@ -394,7 +394,7 @@ segmentedControl.selected.highlighted {
     right-segment-bezel-color: url("segmented-control-bezel-pushed-highlighted-right.png") 4.0 24.0;
 }
 
-slider[param=@CGRectMake(0.0, 0.0, 50.0, 24.0)@] {
+slider {
     track-width: 5.0;
     track-color:    url("horizontal-track-left.png") 4.0 5.0
                     url("horizontal-track-center.png") 1.0 5.0
@@ -445,7 +445,7 @@ slider.circular.highlighted {
     knob-color: url("slider-circular-knob.png") 5.0 5.0;
 }
 
-buttonBar[param=@CGRectMake(0.0, 0.0, 147.0, 26.0)@] {
+buttonBar {
     bezel-color: url("buttonbar-bezel.png") 1.0 26.0;
     resize-control-size: 5.0 10.0;
     resize-control-inset: 9.0 4.0 7.0 4.0;
@@ -471,12 +471,12 @@ buttonBar.disabled {
                         repeat-x;
 }
 
-tableHeaderView[param=@CGRectMake(0.0, 0.0, 100.0, 23.0)@] {
+tableHeaderView {
     background-color: url("tableview-headerview.png") 1.0 23.0;
     divider-color: #dce0e2;
 }
 
-splitView[param=@CGRectMake(0.0, 0.0, 200.0, 200.0)@] {
+splitView {
     divider-thickness: 10.0;
     pane-divider-thickness: 1.0;
 }

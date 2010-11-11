@@ -40,14 +40,7 @@
                                 ["Stmt StmtList", "$2.unshift($1); $$ = $2;"],
                             ],
         "Stmt":             [
-                                ["IDENT AttributeList ThemeStateList { DeclarationList }", "$$ = new yy.ClassNode($1, $5, $2, $3);"],
-                            ],
-        "AttributeList":    [
-                                ["", "$$ = [];"],
-                                ["Attribute AttributeList", "$2.unshift($1); $$ = $2;"],
-                            ],
-        "Attribute":        [
-                                ["[ IDENT = ANYTHING ]", "var attr = {}; attr.key = $2; attr.value = $4.replace(/@/g, ''); $$ = attr;"],
+                                ["IDENT ThemeStateList { DeclarationList }", "$$ = new yy.ClassNode($1, $4, $2);"],
                             ],
         "ThemeStateList":   [
                                 ["", "$$ = [];"],
