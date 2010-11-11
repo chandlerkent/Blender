@@ -11,7 +11,7 @@
 
 button {
     line-break-mode: CPLineBreakByTruncatingTail;
-    image-offset: CPButtonDefaultHeight;
+    image-offset: CPButtonImageOffset;
     text-color: var(TextColor); 
     min-size: 0.0 24.0;
     max-size: -1.0 24.0;
